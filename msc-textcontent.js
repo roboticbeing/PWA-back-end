@@ -11,7 +11,6 @@ var textContentSchema = new Schema ({
     content: String //as HTML
 })
 
-
 // Make schemas available to the application
 module.exports = textContentSchema;
 
