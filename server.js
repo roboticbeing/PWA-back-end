@@ -313,11 +313,11 @@ app.get("/api/feed/events", (req, res) => {
 });
 
 //Get all notice alerts
-app.get("/api/feed/notices", (req, res) => {
+app.get("/api/feed/announcements", (req, res) => {
   // Call the manager method
-  m.alertGetAllFilterNotices()
+  m.alertGetAllFilterAnnouncements()
     .then((data) => {
-      res.json(package(data, '/api/feed'));
+      res.json(package(data, '/api/announcements'));
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
@@ -335,6 +335,7 @@ app.get("/api/feed/alerts", (req, res) => {
       res.status(500).json({ "message": error });
     })
 });
+
 
 // Get all active alerts
 app.get("/api/feed/active",  (req, res) => {

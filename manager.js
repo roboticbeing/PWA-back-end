@@ -405,9 +405,9 @@ module.exports = function () {
       })
 },
 
-alertGetAllFilterNotices: function () {
+alertGetAllFilterAnnouncements: function () {
   return new Promise(function (resolve, reject) {
-      Alerts.find({category: 'notice'})
+      Alerts.find({category: 'announcement'})
       .exec((error, items) => {
           if (error) {
             // Query error
