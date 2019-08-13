@@ -448,7 +448,8 @@ alertGetAllFilterAnnouncements: function () {
 },
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
-           let now = new Date();
+          let now = new Date();
+          //Uses a MongoDB query function to compare the dateExpired to the current date converted into an ISO string
           Alerts.find({"dateExpired": {$gte : now.toISOString()}})
             .exec((error, items) => {
               if (error) {

@@ -12,6 +12,14 @@ const HTTP_PORT = process.env.PORT || 8080;
 
 // Add support for incoming JSON entities
 app.use(bodyParser.json());
+
+//Rafi's code
+// app.use((req, res, next) => {
+//   res.set('Access-Control-Allow-Origin', '*');
+//   res.set("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, HEAD, OPTIONS");
+//   next();
+// });
+
 // Add support for CORS
 app.use(cors());
 
