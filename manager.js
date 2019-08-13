@@ -419,6 +419,20 @@ alertGetAllFilterAnnouncements: function () {
     })
 },
 
+alertGetAllFilterNotices: function () {
+  return new Promise(function (resolve, reject) {
+      Alerts.find({category: 'notice'})
+      .exec((error, items) => {
+          if (error) {
+            // Query error
+            return reject(error.message);
+          }
+          // Found, a collection will be returned
+          return resolve(items);
+        });
+    })
+},
+
 alertGetAllFilterAlerts: function () {
   return new Promise(function (resolve, reject) {
       Alerts.find({category: 'alert'})
@@ -449,7 +463,7 @@ alertGetAllFilterAnnouncements: function () {
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
           let now = new Date();
-          //Uses a MongoDB query function to compare the dateExpired to the current date converted into an ISO string
+          //Uses a MongoDB query function to compare the dateExpired value to the current date converted into an ISO string
           Alerts.find({"dateExpired": {$gte : now.toISOString()}})
             .exec((error, items) => {
               if (error) {
@@ -651,7 +665,22 @@ textContentGetArabic: function () {
           return resolve();
         })
       })
-    }
+    },
+
+    // lawsAndTraditionsGetAll: function () {
+    //   return new Promise(function (resolve, reject) {
+    //     textContent.find()
+    //     .exec((error, items) => {
+    //       if (error) {
+    //         // Query error
+    //         return reject(error.message);
+    //     }
+    //     // Found, a collection will be returned
+    //     return resolve(items);
+    //   });
+    //   })
+    // },
+
 
    
 

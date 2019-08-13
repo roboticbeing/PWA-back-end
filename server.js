@@ -320,12 +320,24 @@ app.get("/api/feed/events", (req, res) => {
     })
 });
 
-//Get all notice alerts
+//Get all announcement alerts
 app.get("/api/feed/announcements", (req, res) => {
   // Call the manager method
   m.alertGetAllFilterAnnouncements()
     .then((data) => {
       res.json(package(data, '/api/announcements'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+  });
+
+  //Get all notice alerts
+app.get("/api/feed/notices", (req, res) => {
+  // Call the manager method
+  m.alertGetAllFilterNotices()
+    .then((data) => {
+      res.json(package(data, '/api/notices'));
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
