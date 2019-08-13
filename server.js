@@ -441,6 +441,41 @@ app.get("/api/textcontent/:id", (req, res) => {
     })
 });
 
+//Get Danish content
+app.get("/api/textcontent/DK", (req, res) => {
+  // Call the manager method
+  m.textContentGetDanish()
+    .then((data) => {
+      res.json(package(data, '/api/textcontent/DK'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+//Get English content
+app.get("/api/textcontent/EN", (req, res) => {
+  // Call the manager method
+  m.textContentGetEnglish()
+    .then((data) => {
+      res.json(package(data, '/api/textcontent/EN'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
+
+//Get English content
+app.get("/api/textcontent/AR", (req, res) => {
+  // Call the manager method
+  m.textContentGetArabic()
+    .then((data) => {
+      res.json(package(data, '/api/textcontent/AR'));
+    })
+    .catch((error) => {
+      res.status(500).json({ "message": error });
+    })
+});
 
 // Add new
 app.post("/api/textcontent", passport.authenticate('jwt', { session: false }), (req, res) => {

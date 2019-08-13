@@ -542,6 +542,48 @@ alertGetAllFilterAnnouncements: function () {
       })
     },
 
+    textContentGetDanish: function () {
+      return new Promise(function (resolve, reject) {
+          Alerts.find({language: 'DK'})
+          .exec((error, items) => {
+              if (error) {
+                // Query error
+                return reject(error.message);
+              }
+              // Found, a collection will be returned
+              return resolve(items);
+            });
+        })
+  },
+
+  textContentGetEnglish: function () {
+    return new Promise(function (resolve, reject) {
+        Alerts.find({language: 'EN'})
+        .exec((error, items) => {
+            if (error) {
+              // Query error
+              return reject(error.message);
+            }
+            // Found, a collection will be returned
+            return resolve(items);
+          });
+      })
+},
+
+textContentGetArabic: function () {
+  return new Promise(function (resolve, reject) {
+      Alerts.find({language: 'AR'})
+      .exec((error, items) => {
+          if (error) {
+            // Query error
+            return reject(error.message);
+          }
+          // Found, a collection will be returned
+          return resolve(items);
+        });
+    })
+},
+
     textContentById: function (itemId) {
       return new Promise(function (resolve, reject) {
 
