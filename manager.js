@@ -393,7 +393,7 @@ module.exports = function () {
 
   alertGetAllFilterEvents: function () {
     return new Promise(function (resolve, reject) {
-        Alerts.find({category: 'event'})
+        Alerts.find({category: 'events'})
         .exec((error, items) => {
             if (error) {
               // Query error
@@ -407,7 +407,7 @@ module.exports = function () {
 
 alertGetAllFilterAnnouncements: function () {
   return new Promise(function (resolve, reject) {
-      Alerts.find({category: 'announcement'})
+      Alerts.find({category: 'announcements'})
       .exec((error, items) => {
           if (error) {
             // Query error
@@ -421,7 +421,7 @@ alertGetAllFilterAnnouncements: function () {
 
 alertGetAllFilterNotices: function () {
   return new Promise(function (resolve, reject) {
-      Alerts.find({category: 'notice'})
+      Alerts.find({category: 'notices'})
       .exec((error, items) => {
           if (error) {
             // Query error
@@ -435,7 +435,7 @@ alertGetAllFilterNotices: function () {
 
 alertGetAllFilterAlerts: function () {
   return new Promise(function (resolve, reject) {
-      Alerts.find({category: 'alert'})
+      Alerts.find({category: 'alerts'})
       .exec((error, items) => {
           if (error) {
             // Query error
@@ -447,19 +447,6 @@ alertGetAllFilterAlerts: function () {
     })
 },
 
-alertGetAllFilterAnnouncements: function () {
-  return new Promise(function (resolve, reject) {
-      Alerts.find({category: 'announcement'})
-      .exec((error, items) => {
-          if (error) {
-            // Query error
-            return reject(error.message);
-          }
-          // Found, a collection will be returned
-          return resolve(items);
-        });
-    })
-},
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
           let now = new Date();
