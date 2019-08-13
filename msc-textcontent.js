@@ -4,7 +4,7 @@ mongoose.set('useCreateIndex', true);
 
 
 var textContentSchema = new Schema ({
-    slug: {type: String, unique: true},
+    slug: String,
     language: String,
     timestamp: String,
     visibility: [{type: String}], //empty for anonymous, rwx permissions
