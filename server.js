@@ -292,7 +292,7 @@ app.get("/api/feed",  (req, res) => {
   m.alertGetAll()
     .then((data) => {
       //res.json(data);
-     // res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/alerts'));
       console.log("Successful Get All");
     })
     .catch((error) => {
