@@ -158,8 +158,10 @@ app.post("/api/useraccounts/register", (req, res) => {
   m.useraccountsRegister(req.body)
     .then((data) => {
       res.json({ "message": data });
+      console.log("Successfully registered");
     }).catch((msg) => {
       res.status(400).json({ "message": msg });
+      console.log("Error 400", err);
     });
 });
 
@@ -197,9 +199,10 @@ app.post("/api/useraccounts/login", (req, res) => {
       var token = jwt.sign(payload, jwtOptions.secretOrKey);
       // Return the result
       res.json({ "message": "Login was successful", token: token });
-
+      console.log("Login was successful");
     }).catch((msg) => {
       res.status(400).json({ "message": msg });
+      console.log("Error 400");
     });
 });
 
@@ -289,10 +292,12 @@ app.get("/api/feed",  (req, res) => {
   m.alertGetAll()
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+     // res.json(package(data, '/api/alerts'));
+      console.log("Successful Get All");
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
+      console.log("Error 500", err);
     })
 });
 
@@ -302,9 +307,11 @@ app.get("/api/feed/news", (req, res) => {
   m.alertGetAllFilterNews()
     .then((data) => {
       res.json(package(data, '/api/alerts'));
+      console.log("Successful Get All News");
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
+      console.log("Error 500", err);
     })
 });
 
@@ -314,9 +321,11 @@ app.get("/api/feed/events", (req, res) => {
   m.alertGetAllFilterEvents()
     .then((data) => {
       res.json(package(data, '/api/alerts'));
+      console.log("Successful Get All Events");
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
+      console.log("Error 500", err);
     })
 });
 
@@ -326,9 +335,11 @@ app.get("/api/feed/announcements", (req, res) => {
   m.alertGetAllFilterAnnouncements()
     .then((data) => {
       res.json(package(data, '/api/announcements'));
+      console.log("Successful Get All Announcements")
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
+      console.log("Error 500", err);
     })
   });
 
@@ -338,9 +349,11 @@ app.get("/api/feed/notices", (req, res) => {
   m.alertGetAllFilterNotices()
     .then((data) => {
       res.json(package(data, '/api/notices'));
+      console.log("Successful Get All Notices");
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
+      console.log("Error 500", err);
     })
   });
     
@@ -350,9 +363,11 @@ app.get("/api/feed/alerts", (req, res) => {
   m.alertGetAllFilterAlerts()
     .then((data) => {
       res.json(package(data, '/api/feed'));
+      console.log("Successful Get All Alerts");
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
+      console.log("Error 500", err);
     })
 });
 
@@ -364,9 +379,11 @@ app.get("/api/feed/active",  (req, res) => {
     .then((data) => {
       //res.json(data);
       res.json(package(data, '/api/feed'));
+      console.log("Successful Get All Active alerts");
     })
     .catch((error) => {
       res.status(500).json({ "message": error });
+      console.log("Error 500", err);
     })
 });
 
@@ -378,9 +395,11 @@ app.get("/api/feed/:id", (req, res) => {
     .then((data) => {
       //res.json(data);
       res.json(package(data, '/api/feed'));
+      console.log("Successful Get One Feed Item");
     })
     .catch(() => {
       res.status(404).json({ "message": "Resource not found" });
+      console.log("Error 404", err);
     })
 });
 
