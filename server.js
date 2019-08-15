@@ -358,7 +358,7 @@ app.get("/api/feed/notices", (req, res) => {
     })
   });
     
-//Get all alert alerts
+//Get all feed alerts
 app.get("/api/feed/alerts", (req, res) => {
   // Call the manager method
   m.alertGetAllFilterAlerts()
