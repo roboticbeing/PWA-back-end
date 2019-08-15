@@ -14,7 +14,8 @@ app.get("/api/feed/news", (req, res) => {
       console.log("Error 500", err);
     })
 });
-
+```
+```
 //Get all event alerts
 app.get("/api/feed/events", (req, res) => {
   // Call the manager method
@@ -28,7 +29,8 @@ app.get("/api/feed/events", (req, res) => {
       console.log("Error 500", err);
     })
 });
-
+```
+```
 //Get all announcement alerts
 app.get("/api/feed/announcements", (req, res) => {
   // Call the manager method
@@ -42,7 +44,8 @@ app.get("/api/feed/announcements", (req, res) => {
       console.log("Error 500", err);
     })
   });
-
+```
+```
   //Get all notice alerts
 app.get("/api/feed/notices", (req, res) => {
   // Call the manager method
@@ -56,6 +59,9 @@ app.get("/api/feed/notices", (req, res) => {
       console.log("Error 500", err);
     })
   });
+  ```
+
+  ```
     
 //Get all alert alerts
 app.get("/api/feed/alerts", (req, res) => {
@@ -70,8 +76,8 @@ app.get("/api/feed/alerts", (req, res) => {
       console.log("Error 500", err);
     })
 });
-
-
+```
+```
 // Get all active alerts
 app.get("/api/feed/active",  (req, res) => {
   // Call the manager method
@@ -86,9 +92,9 @@ app.get("/api/feed/active",  (req, res) => {
       console.log("Error 500", err);
     })
 });
-  
+  ```
   <h3>manager.js</h3>
-
+```
    alertGetAllFilterNews: function () {
       return new Promise(function (resolve, reject) {
         //Searches within our database 
@@ -106,7 +112,8 @@ app.get("/api/feed/active",  (req, res) => {
             });
         })
   },
-
+```
+```
   alertGetAllFilterEvents: function () {
     return new Promise(function (resolve, reject) {
         Alerts.find({category: 'events'})
@@ -120,7 +127,8 @@ app.get("/api/feed/active",  (req, res) => {
           });
       })
 },
-
+```
+```
 alertGetAllFilterAnnouncements: function () {
   return new Promise(function (resolve, reject) {
       Alerts.find({category: 'announcements'})
@@ -134,7 +142,8 @@ alertGetAllFilterAnnouncements: function () {
         });
     })
 },
-
+```
+```
 alertGetAllFilterNotices: function () {
   return new Promise(function (resolve, reject) {
       Alerts.find({category: 'notices'})
@@ -148,7 +157,8 @@ alertGetAllFilterNotices: function () {
         });
     })
 },
-
+```
+```
 alertGetAllFilterAlerts: function () {
   return new Promise(function (resolve, reject) {
       Alerts.find({category: 'alerts'})
@@ -162,7 +172,8 @@ alertGetAllFilterAlerts: function () {
         });
     })
 },
-
+```
+```
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
           let now = new Date();
@@ -242,3 +253,5 @@ Start/run the server.
 Test with Postman.
 
 <br> -->
+
+
