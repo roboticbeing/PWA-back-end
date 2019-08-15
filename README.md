@@ -149,7 +149,7 @@ alertGetAllFilterNotices: function () {
         });
     })
 },
-
+```
 alertGetAllFilterAlerts: function () {
   return new Promise(function (resolve, reject) {
       Alerts.find({category: 'alerts'})
@@ -163,6 +163,8 @@ alertGetAllFilterAlerts: function () {
         });
     })
 },
+```
+```
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
           let now = new Date();
@@ -180,6 +182,7 @@ alertGetAllFilterAlerts: function () {
             });
         })
       }
+      ```
 
   
 
