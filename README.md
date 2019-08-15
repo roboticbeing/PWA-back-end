@@ -1,6 +1,6 @@
 <h2>The code you need to copy/paste</h2>
 <h3>Server.js</h3>
-```bash
+```
 //Get all news alerts
 app.get("/api/feed/news", (req, res) => {
   // Call the manager method
