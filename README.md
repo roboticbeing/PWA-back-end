@@ -163,7 +163,6 @@ alertGetAllFilterAlerts: function () {
         });
     })
 },
-
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
           let now = new Date();
