@@ -179,11 +179,10 @@ alertGetAllFilterAlerts: function () {
               return resolve(items);
             });
         })
-      },
-
-  ```
+      }
+```
   
-  <h3>Project Template</h3>
+  <!-- <h3>Project Template</h3>
   <p>Features:</p>
   <ul>
     <li>Node.js and Express.js</li>
@@ -242,4 +241,4 @@ Generate the value for `jwtOptions.secretOrKey` in `server.js` (near line 54).
 Start/run the server.  
 Test with Postman.
 
-<br>
+<br> -->
