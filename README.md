@@ -14,8 +14,7 @@ app.get("/api/feed/news", (req, res) => {
       console.log("Error 500", err);
     })
 });
-```
-```
+
 //Get all event alerts
 app.get("/api/feed/events", (req, res) => {
   // Call the manager method
@@ -29,8 +28,7 @@ app.get("/api/feed/events", (req, res) => {
       console.log("Error 500", err);
     })
 });
-```
-```
+
 //Get all announcement alerts
 app.get("/api/feed/announcements", (req, res) => {
   // Call the manager method
@@ -44,8 +42,8 @@ app.get("/api/feed/announcements", (req, res) => {
       console.log("Error 500", err);
     })
   });
-```
-```
+
+
   //Get all notice alerts
 app.get("/api/feed/notices", (req, res) => {
   // Call the manager method
@@ -59,11 +57,9 @@ app.get("/api/feed/notices", (req, res) => {
       console.log("Error 500", err);
     })
   });
-  ```
 
-  ```
     
-//Get all alert alerts
+//Get all feed alerts
 app.get("/api/feed/alerts", (req, res) => {
   // Call the manager method
   m.alertGetAllFilterAlerts()
@@ -76,8 +72,7 @@ app.get("/api/feed/alerts", (req, res) => {
       console.log("Error 500", err);
     })
 });
-```
-```
+
 // Get all active alerts
 app.get("/api/feed/active",  (req, res) => {
   // Call the manager method
@@ -92,9 +87,9 @@ app.get("/api/feed/active",  (req, res) => {
       console.log("Error 500", err);
     })
 });
-  ```
+  
   <h3>manager.js</h3>
-```
+
    alertGetAllFilterNews: function () {
       return new Promise(function (resolve, reject) {
         //Searches within our database 
@@ -112,8 +107,7 @@ app.get("/api/feed/active",  (req, res) => {
             });
         })
   },
-```
-```
+
   alertGetAllFilterEvents: function () {
     return new Promise(function (resolve, reject) {
         Alerts.find({category: 'events'})
@@ -127,8 +121,7 @@ app.get("/api/feed/active",  (req, res) => {
           });
       })
 },
-```
-```
+
 alertGetAllFilterAnnouncements: function () {
   return new Promise(function (resolve, reject) {
       Alerts.find({category: 'announcements'})
@@ -142,8 +135,7 @@ alertGetAllFilterAnnouncements: function () {
         });
     })
 },
-```
-```
+
 alertGetAllFilterNotices: function () {
   return new Promise(function (resolve, reject) {
       Alerts.find({category: 'notices'})
@@ -157,8 +149,7 @@ alertGetAllFilterNotices: function () {
         });
     })
 },
-```
-```
+
 alertGetAllFilterAlerts: function () {
   return new Promise(function (resolve, reject) {
       Alerts.find({category: 'alerts'})
@@ -172,8 +163,7 @@ alertGetAllFilterAlerts: function () {
         });
     })
 },
-```
-```
+
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
           let now = new Date();
@@ -193,65 +183,7 @@ alertGetAllFilterAlerts: function () {
       }
 ```
   
-  <!-- <h3>Project Template</h3>
-  <p>Features:</p>
-  <ul>
-    <li>Node.js and Express.js</li>
-    <li>Database is MongoDB</li>
-    <li>One entity for end users, a collection of automobiles</li>
-    <li>Another entity to hold user accounts</li>
-    <li>Security is provided by Passport.js and JWT handling</li>
-  </ul>
 
-<br>
 
-### How to get started with this template
-
-Copy and paste the project template *folder*, and rename the new folder as you wish. 
-
-In a new CLI (command line interface), navigate to the project folder.  
-Run `npm init` to update the name and any other values you wish to update.  
-Run `npm i` to rebuild the packages it needs.  
-
-In a new CLI window, create a new folder to hold the database.  
-Locate it at the same level as the project folder, or elsewhere to meet your needs.  
-*DO NOT* locate it inside the new project folder.  
-
-Start the database engine, which also initializes the database:  
-
-> Replace `databasename` with the name that you used above. 
-
-```bash
-mongod --dbpath ./databasename
-```
-
-Return to the project CLI window. 
-
-Import the user account starter data:
-
-> Replace `databasename` with the name that you used above. 
-
-```bash
-mongoimport --db dps945 --collection persons --file dbdata-persons.json --jsonArray
-```
-
-Import the (cars) example starter data:
-
-> Replace `databasename` with the name that you used above. 
-
-```bash
-mongoimport --db databasename --collection cars --file dbdata-cars.json --jsonArray
-```
-
-Now, open the project in your code editor.  
-
-Update the `databasename` text in `manager.js` (near line 44). 
-
-Generate the value for `jwtOptions.secretOrKey` in `server.js` (near line 54).
-
-Start/run the server.  
-Test with Postman.
-
-<br> -->
 
 
