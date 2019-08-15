@@ -13,7 +13,8 @@ app.get("/api/feed/news", (req, res) => {
       res.status(500).json({ "message": error });
       console.log("Error 500", err);
     })
-});```
+});
+```
 ```
 //Get all event alerts
 app.get("/api/feed/events", (req, res) => {
@@ -27,7 +28,8 @@ app.get("/api/feed/events", (req, res) => {
       res.status(500).json({ "message": error });
       console.log("Error 500", err);
     })
-});```
+});
+```
 ```
 //Get all announcement alerts
 app.get("/api/feed/announcements", (req, res) => {
@@ -41,7 +43,8 @@ app.get("/api/feed/announcements", (req, res) => {
       res.status(500).json({ "message": error });
       console.log("Error 500", err);
     })
-  });```
+  });
+  ```
 
 ```
   //Get all notice alerts
@@ -56,7 +59,8 @@ app.get("/api/feed/notices", (req, res) => {
       res.status(500).json({ "message": error });
       console.log("Error 500", err);
     })
-  });```
+  });
+  ```
 
    ``` 
 //Get all feed alerts
