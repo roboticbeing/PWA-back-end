@@ -116,6 +116,7 @@ app.get("/api/useraccounts", passport.authenticate('jwt', { session: false }), (
     })
 });
 
+
 // Get one (for dev testing only; DISABLE or PROTECT before deployment!)
 // (Maybe make it available only to requests that have the "UserAccountManager" role)
 app.get("/api/useraccounts/:id", (req, res) => {
