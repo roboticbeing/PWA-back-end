@@ -293,7 +293,7 @@ app.get("/api/feed",  (req, res) => {
   m.alertGetAll()
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/feed'));
       console.log("Successful Get All");
     })
     .catch((error) => {
@@ -307,7 +307,7 @@ app.get("/api/feed/news", (req, res) => {
   // Call the manager method
   m.alertGetAllFilterNews()
     .then((data) => {
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/feed/news'));
       console.log("Successful Get All News");
     })
     .catch((error) => {
@@ -321,7 +321,7 @@ app.get("/api/feed/events", (req, res) => {
   // Call the manager method
   m.alertGetAllFilterEvents()
     .then((data) => {
-      res.json(package(data, '/api/alerts'));
+      res.json(package(data, '/api/feed/events'));
       console.log("Successful Get All Events");
     })
     .catch((error) => {
@@ -335,7 +335,7 @@ app.get("/api/feed/announcements", (req, res) => {
   // Call the manager method
   m.alertGetAllFilterAnnouncements()
     .then((data) => {
-      res.json(package(data, '/api/announcements'));
+      res.json(package(data, '/api/feed/announcements'));
       console.log("Successful Get All Announcements")
     })
     .catch((error) => {
@@ -349,7 +349,7 @@ app.get("/api/feed/notices", (req, res) => {
   // Call the manager method
   m.alertGetAllFilterNotices()
     .then((data) => {
-      res.json(package(data, '/api/notices'));
+      res.json(package(data, '/api/feed/notices'));
       console.log("Successful Get All Notices");
     })
     .catch((error) => {
@@ -363,7 +363,7 @@ app.get("/api/feed/alerts", (req, res) => {
   // Call the manager method
   m.alertGetAllFilterAlerts()
     .then((data) => {
-      res.json(package(data, '/api/feed'));
+      res.json(package(data, '/api/feed/alerts'));
       console.log("Successful Get All Alerts");
     })
     .catch((error) => {
@@ -379,7 +379,7 @@ app.get("/api/feed/active",  (req, res) => {
   m.alertGetAllActive()
     .then((data) => {
       //res.json(data);
-      res.json(package(data, '/api/feed'));
+      res.json(package(data, '/api/feed/active'));
       console.log("Successful Get All Active alerts");
     })
     .catch((error) => {
