@@ -379,6 +379,10 @@ module.exports = function () {
       
     alertGetAllFilterNews: function () {
       return new Promise(function (resolve, reject) {
+        //Searches within our database 
+        //for a key that matches category 
+        //and a value that matches 'news'
+        //retrieving all news items
           Alerts.find({category: 'news'})
           .exec((error, items) => {
               if (error) {
@@ -450,7 +454,10 @@ alertGetAllFilterAlerts: function () {
       alertGetAllActive: function () {
         return new Promise(function (resolve, reject) {
           let now = new Date();
-          //Uses a MongoDB query function to compare the dateExpired value to the current date converted into an ISO string
+          // Uses a MongoDB query function 
+          // to compare the dateExpired value in our database
+          // to the current date in our now variable
+          // and converts now into an ISO string to match the dateExpired type
           Alerts.find({"dateExpired": {$gte : now.toISOString()}})
             .exec((error, items) => {
               if (error) {
